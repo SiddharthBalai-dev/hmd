@@ -1,0 +1,8 @@
+frontend/
+frontend/node_modules/
+*.docx
+.firebaserc
+firebase.json
+__pycache__/
+*.pyc
+.git/
