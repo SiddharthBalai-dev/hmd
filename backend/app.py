@@ -18,7 +18,7 @@ import MODEL3
 from backend.health_engine import age_to_age_group
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://healthmonitor-6685d.web.app", "http://localhost:5173"])
 
 DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "hmd.db")
 

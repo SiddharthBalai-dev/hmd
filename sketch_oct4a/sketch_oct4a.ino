@@ -11,8 +11,8 @@
 // ── Configuration ──
 
 // Fallback WiFi (used only if NVS list is empty on first boot)
-const char* FALLBACK_WIFI_SSID = "ESP32Test";
-const char* FALLBACK_WIFI_PASSWORD = "12345678";
+const char* FALLBACK_WIFI_SSID = "ASAS";
+const char* FALLBACK_WIFI_PASSWORD = "ghansham@117";
 
 // Multi-WiFi support
 #define MAX_WIFI_NETWORKS 8
@@ -34,7 +34,7 @@ const char* FIREBASE_URL = "https://healthmonitor-6685d-default-rtdb.firebaseio.
 // Set to your deployed backend URL after deployment
 // Local: "http://10.61.97.31:5000"
 // Cloud Run: "https://hmd-backend-xxxxx-uc.a.run.app"
-const char* BACKEND_URL = "";
+const char* BACKEND_URL = "https://hmd-backend.onrender.com";
 
 // Device / Patient ID — must match what you link in the web app
 const char* DEVICE_ID = "PATIENT_001";
