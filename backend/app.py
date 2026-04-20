@@ -15,7 +15,7 @@ from flask import Flask, request, jsonify, g
 from flask_cors import CORS
 
 import MODEL3
-from backend.health_engine import age_to_age_group
+from health_engine import age_to_age_group
 
 app = Flask(__name__)
 CORS(app, origins=["https://healthmonitor-6685d.web.app", "http://localhost:5173"])
