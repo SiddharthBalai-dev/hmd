@@ -85,9 +85,10 @@ def register():
 
     doctor_id = None
     if data["role"] == "patient":
-        doctor_id = data.get("doctor_id")
-        if doctor_id:
-            if not users_col.find_one({"id": int(doctor_id), "role": "doctor"}):
+        raw_doctor_id = data.get("doctor_id")
+        if raw_doctor_id:
+            doctor_id = int(raw_doctor_id)
+            if not users_col.find_one({"id": doctor_id, "role": "doctor"}):
                 return jsonify({"error": "Invalid doctor code"}), 400
 
     # Auto increment id
@@ -150,6 +151,10 @@ def login():
 
     if user_dict["role"] == "doctor":
         user_dict["patient_count"] = patients_col.count_documents({"doctor_id": user_dict["id"]})
+
+    if user_dict["role"] == "patient":
+        fresh_user = users_col.find_one({"id": user_dict["id"]})
+        user_dict["patient_link_id"] = fresh_user.get("patient_link_id") if fresh_user else None
 
     return jsonify(user_dict)
 
